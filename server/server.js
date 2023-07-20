@@ -7,11 +7,11 @@ app.use(cors());
 app.use(express.json());
 
 //connection to db
-const connection = mysql.createConnection({ 
-  host: 'database-final-project.cc91glolvrfr.eu-north-1.rds.amazonaws.com',
+const connection = mysql.createConnection({
+  host: 'final-project-aws.cc91glolvrfr.eu-north-1.rds.amazonaws.com',
   user: 'admin',
   password: '123456789',
-  database: 'final_project_db',
+  database: 'final_project_database_aws',
 });
 
 connection.connect(error => {
