@@ -93,8 +93,9 @@ const TodoList = () => {
       />
 
       <List>
-        {todos.map(todo => (
-          <ListItem key={todo.id}>
+        {todos.map((todo, index)=> (
+          // <ListItem key={todo.id}>
+            <ListItem key={index}>
             <Checkbox
               checked={todo.completed}
               onChange={() => handleToggleComplete(todo.id)}
