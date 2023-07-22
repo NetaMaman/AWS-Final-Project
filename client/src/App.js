@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './TodoList';
+import Todo from './TodoList.js';
 import { Container, Typography } from '@mui/material';
 
 function App() {
