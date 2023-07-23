@@ -87,7 +87,8 @@ const TodoList = () => {
         Add
       </button>
       <ul>
-        {todos.map((todo, index) => (
+        {todos? ( 
+          todos.map((todo, index) => {return(
           <li key={index} className="todo-item">
             <input
               type="checkbox"
@@ -100,7 +101,8 @@ const TodoList = () => {
               Delete
             </button>
           </li>
-        ))}
+        )})) : ""}
+       
       </ul>
     </div>
     </div>
