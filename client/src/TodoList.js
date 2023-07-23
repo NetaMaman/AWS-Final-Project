@@ -13,7 +13,7 @@ const TodoList = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('/todos');
+      const response = await axios.get('http://localhost:3001/todos');
       if (response){
         setTodos(response.data);
       }
@@ -30,7 +30,7 @@ const TodoList = () => {
       };
 
       try {
-        const response = await axios.post('/todos', todo);
+        const response = await axios.post('http://localhost:3001/todos', todo);
         const newTodoWithId = { ...response.data, id: response.data.insertId };
         setTodos(prevTodos => [...prevTodos, newTodoWithId]);
         setNewTodo('');
@@ -47,7 +47,7 @@ const TodoList = () => {
           ...todo,
           completed: !todo.completed,
         };
-        axios.put(`/todos/${id}`, updatedTodo)
+        axios.put(`http://localhost:3001/todos/${id}`, updatedTodo)
           .catch(error => {
             console.log(error);
           });
@@ -61,7 +61,7 @@ const TodoList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/todos/${id}`);
+      await axios.delete(`http://localhost:3001/todos/${id}`);
       setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
     } catch (error) {
       console.log(error);
