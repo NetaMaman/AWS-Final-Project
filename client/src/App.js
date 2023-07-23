@@ -3,9 +3,6 @@ import TodoList from './TodoList';
 function App() {
   return (
     <>
-      <div>
-      To-Do List
-      </div>
     <TodoList />
     </>
 

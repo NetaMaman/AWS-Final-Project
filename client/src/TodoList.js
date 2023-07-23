@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './TodoList.css'; // Import the CSS file
+import './TodoList.css';
+import image from './image/image.png'
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -66,6 +67,14 @@ const TodoList = () => {
   };
 
   return (
+    <> 
+    <img className="image" src={image} alt="be productive" width="1325" height="400" />
+
+    <div className='body-list'>
+
+      {/* <div className="header">
+        Todo List
+      </div> */}
     <div className="todo-list-container">
       <input
         className="todo-input"
@@ -85,8 +94,8 @@ const TodoList = () => {
               checked={todo.completed}
               onChange={() => handleToggleComplete(todo.id)}
             />
-            <span>{todo.title}</span>
-            <span>{todo.completed ? 'Completed' : 'Incomplete'}</span>
+            <span className='todo-title'>{todo.title}</span>
+            {/* <span>{todo.completed ? 'Completed' : 'Incomplete'}</span> */}
             <button className="delete-button" onClick={() => handleDelete(todo.id)}>
               Delete
             </button>
@@ -94,6 +103,8 @@ const TodoList = () => {
         ))}
       </ul>
     </div>
+    </div>
+    </>
   );
 };
 

@@ -32,6 +32,10 @@ app.get('/todos', (req, res) => {
       res.status(500).send('Internal Server Error');
     } else {
       res.json(results);
+      if(results!=null){
+        console.log(results);
+      }
+      
     }
   });
 });
@@ -68,6 +72,7 @@ app.put('/todos/:id', (req, res) => {
       res.status(500).send('Internal Server Error');
     } else {
       res.sendStatus(200);
+      console.log(res);
     }
   });
 });

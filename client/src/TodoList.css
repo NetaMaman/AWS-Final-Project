@@ -1,39 +1,136 @@
-/* TodoList.css */
+body{
+  background-color: #f0f0f0;
+}
+
+.image {
+background-color: #ffffff;
+margin: 0;
+margin-left: 125px;
+margin-top: 30px;
+}
+
+.body-list {
+  /* justify-content: center; */
+  margin: 0;
+  background-color: #f0f0f0;
+  margin-bottom: 30px;
+  padding-left: 145px;
+  padding-right: 100px;
+  margin-top: 30px;
+}
+
+.header {
+  display: flex;
+  font-size: 50px;
+  color: #e6b951da;
+  margin-bottom: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  padding-left: 350px;
+  padding-right: 100px;
+}
+
 .todo-list-container {
-    width: 300px;
-    margin: auto;
-  }
-  
-  .todo-input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 16px;
-  }
-  
-  .todo-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .todo-item input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .todo-item span {
-    margin-right: 10px;
-  }
-  
-  .delete-button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: #d32f2f;
-  }
-  
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.todo-input-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 20px;  
+}
+
+.todo-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 22px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin-left: 40px;
+  width: 88%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.add-button {
+  margin-left: 10px;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.todo-title{
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+
+.todo-item.completed {
+  background-color: #e5e5e5;
+  text-decoration: line-through;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item span {
+  flex: 1;
+}
+
+.delete-button {
+  padding: 8px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+
+.todo-item:last-child {
+  border-bottom: none;
+}
