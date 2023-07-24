@@ -13,10 +13,11 @@ const TodoList = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://16.171.145.225:3001/todos');
+      const response = await axios.get('http://react-app-lb-119339516.eu-north-1.elb.amazonaws.com:3001/todos');
       if (response){
         setTodos(response.data);
       }
+      
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +31,7 @@ const TodoList = () => {
       };
 
       try {
-        const response = await axios.post('http://16.171.145.225:3001/todos', todo);
+        const response = await axios.post('http://react-app-lb-119339516.eu-north-1.elb.amazonaws.com:3001/todos', todo);
         const newTodoWithId = { ...response.data, id: response.data.insertId };
         setTodos(prevTodos => [...prevTodos, newTodoWithId]);
         setNewTodo('');
@@ -47,7 +48,7 @@ const TodoList = () => {
           ...todo,
           completed: !todo.completed,
         };
-        axios.put(`http://16.171.145.225:3001/todos/${id}`, updatedTodo)
+        axios.put(`http://react-app-lb-119339516.eu-north-1.elb.amazonaws.com:3001/todos/${id}`, updatedTodo)
           .catch(error => {
             console.log(error);
           });
@@ -61,7 +62,7 @@ const TodoList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://16.171.145.225:3001/todos/${id}`);
+      await axios.delete(`http://react-app-lb-119339516.eu-north-1.elb.amazonaws.com:3001/todos/${id}`);
       setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
     } catch (error) {
       console.log(error);
@@ -73,10 +74,6 @@ const TodoList = () => {
     <img className="image" src={image} alt="be productive" width="1325" height="400" />
 
     <div className='body-list'>
-
-      {/* <div className="header">
-        Todo List
-      </div> */}
     <div className="todo-list-container">
       <input
         className="todo-input"
